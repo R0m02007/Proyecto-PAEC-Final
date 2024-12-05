@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crucigrama - Tercera Edad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #5a5a5a;
+        }
+
+        .crucigrama {
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            grid-template-rows: repeat(10, 40px);
+            gap: 5px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+
+        .celda {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #fff;
+        }
+
+        .celda input {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border: none;
+            font-size: 20px;
+        }
+
+        .pistas {
+            margin-top: 20px;
+        }
+
+        .pista {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crucigrama - Tercera Edad</h1>
+    <div class="crucigrama" id="crucigrama">
+        <!-- Las celdas del crucigrama se generarán aquí -->
+    </div>
+    
+    <div class="pistas">
+        <h3>Pistas:</h3>
+        <div class="pista">1. Horizontal: Cuidado y atención para las personas mayores.</div>
+        <div class="pista">2. Vertical: Característica de los años de vida.</div>
+        <div class="pista">3. Horizontal: Respeto y estima por los demás.</div>
+    </div>
+
+    <script>
+        // Crucigrama de ejemplo (las palabras están en un formato simple)
+        const crucigrama = [
+            ['C', 'U', 'I', 'D', 'A', 'D', 'O', '', '', ''],
+            ['', '', '', '', '', '', '', '', '', ''],
+            ['', '', '', 'C', '', '', '', '', '', ''],
+            ['', '', '', 'R', '', '', '', '', '', ''],
+            ['', '', '', 'E', '', '', '', '', '', ''],
+            ['', '', '', 'A', '', '', '', '', '', ''],
+            ['', '', '', 'T', '', '', '', '', '', ''],
+            ['', '', '', 'E', '', '', '', '', '', ''],
+            ['', '', '', 'N', '', '', '', '', '', ''],
+            ['', '', '', 'S', '', '', '', '', '', ''],
+        ];
+
+        // Generar las celdas del crucigrama
+        const grid = document.getElementById('crucigrama');
+        for (let y = 0; y < 10; y++) {
+            for (let x = 0; x < 10; x++) {
+                const celda = document.createElement('div');
+                celda.classList.add('celda');
+                
+                if (crucigrama[y][x] !== '') {
+                    const input = document.createElement('input');
+                    input.maxLength = 1;
+                    input.dataset.x = x;
+                    input.dataset.y = y;
+                    celda.appendChild(input);
+                }
+                grid.appendChild(celda);
+            }
+        }
+
+        // Función para verificar las respuestas
+        function verificar() {
+            const respuestasCorrectas = [
+                { palabra: 'CUIDADO', x: 0, y: 0, dir: 'h' },
+                { palabra: 'CUIDAD', x: 3, y: 0, dir: 'v' },
+                { palabra: 'RESPETO', x: 1, y: 2, dir: 'h' },
+            ];
+
+            let acertadas = 0;
+
+            respuestasCorrectas.forEach((respuesta) => {
+                const palabra = respuesta.palabra;
+                let correcta = true;
+
+                for (let i = 0; i < palabra.length; i++) {
+                    const x = respuesta.dir === 'h' ? respuesta.x + i : respuesta.x;
+                    const y = respuesta.dir === 'v' ? respuesta.y + i : respuesta.y;
+                    const input = document.querySelector(`input[data-x='${x}'][data-y='${y}']`);
+
+                    if (input.value.toUpperCase() !== palabra[i]) {
+                        correcta = false;
+                        break;
+                    }
+                }
+
+                if (correcta) {
+                    acertadas++;
+                }
+            });
+
+            alert(`${acertadas} palabras correctas!`);
+        }
+
+        // Agregar un botón para verificar respuestas
+        const button = document.createElement('button');
+        button.textContent = 'Verificar Respuestas';
+        button.addEventList

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 30%;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-title {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            margin-bottom: 10px;
+        }
+
+        a { 
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #ffc400;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgb(165, 194, 148);
+            transition: box-shadow 0.3s ease;
+        }
+
+        a:hover {
+            box-shadow: 0 0 20px hsla(59, 100%, 51%, 0.8);
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .banner img {
+            position: absolute;
+            width: 250px; 
+            height: auto;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .banner img.active {
+            opacity: 1;
+        }
+
+        @keyframes slide {
+            0% { opacity: 1; }
+            20% { opacity: 1; }
+            40% { opacity: 0; }
+            60% { opacity: 0; }
+            80% { opacity: 1; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="product">
+                <img src="cocodrilo.jpg" alt="Producto 1" style="width:200px;height:250px;">
+                <h2 class="product-title">Poster de Cocodrilo</h2>
+                <p class="product-price">$300.00</p>
+                <p class="product-description">Peluche de pingüino lindo y abrazable.</p>
+                <a href="formulariodeventa.html">Comprar</a>
+                <select name="cuantos quieres">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            
+            <div class="product">
+                <img src="tucan.jpg" alt="Producto 2" style="width:200px;height:250px;">
+                <h2 class="product-title">Gorra de Tucán</h2>
+                <p class="product-price">$250.00</p>
+                <p class="product-description">Increíble tiburón blanco para ver cómo luce un tiburón blanco de cerca, de increíble calidad.</p>
+                <a href="formulariodeventa.html">Comprar</a>
+                <select name="cuantos quieres">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            
+            <div class="product">
+                <div class="banner">
+                    <img src="pinguino.jpeg" alt="Imagen 1" class="active">
+                    <img src="pinguino2.jpeg" alt="Imagen 2">
+                    <img src="pinguino3.jpeg" alt="Imagen 3">
+                </div>
+                <h2 class="product-title">Pingüino Gigante</h2>
+                <p class="product-price">$500.00</p>
+                <p class="product-description">Lindo llavero de jirafa.</p>
+                <a href="formulariodeventa.html">Comprar</a>
+                <select name="cuantos quieres">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="product">
+                <img src="capibara.jpg" alt="Capibara" style="width:200px;height:240px;">
+                <h2 class="product-title">Producto 4</h2>
+                <p class="product-price">$450.00</p>
+                <p class="product-description">Peluche de capibara.</p>
+                <a href="formulariodeventa.html">Comprar</a>
+                <select name="cuantos quieres">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            
+            <div class="product">
+                <img src="coala.jpeg" alt="Koala" style="width:200px;height:240px;">
+                <h2 class="product-title">Producto 5</h2>
+                <p class="product-price">$450.00</p>
+                <p class="product-description">Taza de koala.</p>
+                <a href="formulariodeventa.html">Comprar</a>
+                <select name="cuantos quieres">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="product">
+                <img src="zoogd.jpg" alt="Taza" style="width:200px;height:240px;">
+                <h2 class="product-title">Producto 6</h2>
+                <p class="product-price">$450.00</p>
+                <p class="product-description">Peluche de capibara.</p>
+                <a href="formulariodeventa.html">Comprar</a>
+                <select name="cuantos quieres">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.banner img');
+        let currentIndex = 0;
+
+        function changeImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length; 
+            images[currentIndex].classList.add('active'); 
+        }
+
+        setInterval(changeImage, 3000);
+    </script>
+</body>
+</html>

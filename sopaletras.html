@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopa de Letras - Tercera Edad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #5a5a5a;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            gap: 5px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+        .cell {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .cell.highlighted {
+            background-color: #ffd700;
+        }
+        .word-list {
+            margin: 20px 0;
+        }
+        .word {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sopa de Letras - Tercera Edad</h1>
+    <p>Encuentra las siguientes palabras:</p>
+    <div class="word-list">
+        <span class="word">Sabiduría</span>,
+        <span class="word">Experiencia</span>,
+        <span class="word">Paciencia</span>,
+        <span class="word">Respeto</span>,
+        <span class="word">Amor</span>
+    </div>
+    <div class="grid" id="sopaGrid"></div>
+    <script>
+        
+        const palabras = ["SABIDURIA", "EXPERIENCIA", "PACIENCIA", "RESPETO", "AMOR"];
+        const gridSize = 10; 
+        const grid = [];
+
+      
+        for (let i = 0; i < gridSize; i++) {
+            grid[i] = new Array(gridSize).fill('');
+        }
+
+        
+        palabras.forEach(palabra => {
+            let placed = false;
+            while (!placed) {
+                const direction = Math.floor(Math.random() * 3); 
+                const startX = Math.floor(Math.random() * gridSize);
+                const startY = Math.floor(Math.random() * gridSize);
+                if (direction === 0 && startX + palabra.length <= gridSize) { 
+                    let fits = true;
+                    for (let i = 0; i < palabra.length; i++) {
+                        if (grid[startY][startX + i] !== '' && grid[startY][startX + i] !== palabra[i]) {
+                            fits = false;
+                            break;
+                        }
+                    }
+                    if (fits) {
+                        for (let i = 0; i < palabra.length; i++) {
+                            grid[startY][startX + i] = palabra[i];
+                        }
+                        placed = true;
+                    }
+                } else if (direction === 1 && startY + palabra.length <= gridSize) { // Vertical
+                    let fits = true;
+                    for (let i = 0; i < palabra.length; i++) {
+                        if (grid[startY + i][startX] !== '' && grid[startY + i][startX] !== palabra[i]) {
+                            fits = false;
+                            break;
+                        }
+                    }
+                    if (fits) {
+                        for (let i = 0; i < palabra.length; i++) {
+                            grid[startY + i][startX] = palabra[i];
+                        }
+                        placed = true;
+                    }
+                } else if (direction === 2 && startX + palabra.length <= gridSize && startY + palabra.length <= gridSize) { // Diagonal
+                    let fits = true;
+                    for (let i = 0; i < palabra.length; i++) {
+                        if (grid[startY + i][startX + i] !== '' && grid[startY + i][startX + i] !== palabra[i]) {
+                            fits = false;
+                            break;
+                        }
+                    }
+                    if (fits) {
+                        for (let i = 0; i < palabra.length; i++) {
+                            grid[startY + i][startX + i] = palabra[i];
+                        }
+                        placed = true;
+                    }
+                }
+            }
+        });
+
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (let y = 0; y < gridSize; y++) {
+            for (let x = 0; x < gridSize; x++) {
+                if (grid[y][x] === '') {
+                    grid[y][x] = letters[Math.floor(Math.random() * letters.length)];
+                }
+            }
+        }
+
+        const sopaGrid = document.getElementById("sopaGrid");
+        grid.forEach(row => {
+            row.forEach(letter => {
+                const cell = document.createElement("div");
+                cell.className = "cell";
+                cell.textContent = letter;
+                sopaGrid.appendChild(cell);
+            });
+        });
+    </script>
+</body>
+</html>

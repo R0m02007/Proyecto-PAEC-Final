@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEC - Proyectos</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffffff, #7700ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #fff;
+      margin-top: 20px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    #content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #6200ff;
+      border-radius: 15px;
+      padding: 20px;
+      color: #fff;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    ol {
+      text-align: left;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .f {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .f:hover {
+      background-color: #333;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .logo:hover {
+      transform: translateX(10px);
+    }
+  </style>
+</head>
+
+<body>
+  <img src="union.j.jpeg" alt="Logo" class="logo">
+  <h1>Información extra</h1>
+
+  <div id="content">
+    <div class="card">
+      <img src="dg.jpg" alt="ojo">
+      <h3>Degeneración macular relacionada con la edad</h3>
+      <ol>
+        <li>Es una enfermedad ocular que afecta la mácula.</li>
+        <li>Se presenta en dos formas:
+          <ul>
+            <p>DMRE seca: adelgazamiento gradual de la mácula.</p>
+            <p>DMRE húmeda: crecimiento de vasos sanguíneos anormales.</p>
+          </ul>
+        </li>
+      </ol>
+      <a href="https://medlineplus.gov/spanish/ency/article/001000.htm" class="f">Leer Mas...</a>
+    </div>
+
+    <div class="card">
+      <img src="hiper.jpg" alt="ojo perezoso">
+      <h3>Hipermetropia</h3>
+      <p> trastorno común de la vista en la que puedes ver claramente objetos distantes, pero los objetos cercanos pueden resultar borrosos.</p>
+      <a href="https://www.mayoclinic.org/es/diseases-conditions/farsightedness/symptoms-causes/syc-20372495#:~:text=La%20hipermetrop%C3%ADa%20es%20un%20trastorno,afecta%20tu%20capacidad%20de%20enfoque." class="f">Leer mas...</a>
+    </div>
+
+    <div class="card">
+      <img src="atis.jpg" alt="astigmatismo">
+      <h3>Astigmatismo</h3>
+      <ol>
+        <li>Es un error de refracción que provoca visión borrosa o distorsionada.</li>
+        <li>Ocurre cuando la córnea o el cristalino tienen una forma irregular.</li>
+      </ol>
+      <a href="https://www.nei.nih.gov/espanol/aprenda-sobre-la-salud-ocular/enfermedades-y-afecciones-de-los-ojos/astigmatismo" class="f">Leer mas...</a>
+    </div>
+
+    <div class="card">
+      <img src="cat.jpg" alt="cataratas">
+      <h3>Cataratas</h3>
+      <ol>
+        <li>Son una afección en la que el cristalino se vuelve opaco.</li>
+        <li>Esto afecta la visión, provocando visión borrosa o difusa.</li>
+      </ol>
+      <a href="https://www.mayoclinic.org/es/diseases-conditions/cataracts/symptoms-causes/syc-20353790" class="f">Leer más...</a>
+    </div>
+  </div>
+
+  <a href="https://www.nei.nih.gov/espanol/aprenda-sobre-la-salud-ocular/enfermedades-y-afecciones-de-los-ojos#i" class="f">Más información sobre enfermedades oculares</a>
+</body>
+
+</html>

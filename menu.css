@@ -1,0 +1,62 @@
+/* Ocultamos el checkbox */
+#toggle-menu {
+    display: none;
+}
+
+.menu-container {
+    position: relative;
+}
+
+/* Estilo del botón del menú */
+.menu-button {
+    font-size: 24px;
+    background-color: #58c7c3;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Estilos del menú */
+.menu {
+    background-color: #69b9db;
+    color: rgb(0, 0, 0);
+    width: 200px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: none; /* Por defecto, el menú está oculto */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    border-bottom: 1px solid #bca8a8;
+}
+
+.menu ul li a {
+    display: flex; /* Usamos flexbox para alinear el logo e ítem del menú */
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu ul li a img {
+    width: 20px; /* Ajusta el tamaño del logo */
+    height: 20px;
+    margin-right: 10px; /* Añade un espacio entre el logo y el texto */
+}
+
+.menu ul li a:hover {
+    background-color: #444;
+}
+
+/* Mostrar el menú cuando el checkbox está marcado */
+#toggle-menu:checked + .menu-button + .menu {
+    display: block;
+}

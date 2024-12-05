@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEC - Proyectos</title>
+
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #FFFFFF;
+      margin-top: 20px;
+      text-align: center;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    #content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      padding: 20px;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: #FFFFFF;
+      background-color: #3A86FF;
+      border-radius: 15px;
+      width: 220px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+      box-shadow: 0 0 20px rgba(58, 134, 255, 0.6);
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    a:hover img {
+      transform: scale(1.1);
+    }
+
+    li {
+      list-style-type: none;
+      font-size: 24px;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+      margin: 10px 0;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .logo:hover {
+      transform: translateX(10px);
+    }
+
+    @media (max-width: 768px) {
+      a {
+        width: 160px;
+        padding: 15px;
+      }
+
+      img {
+        width: 80px;
+        height: 80px;
+      }
+
+      li {
+        font-size: 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <img src="union.j.jpeg" alt="Logo" class="logo">
+
+  <h1>Información extra</h1>
+
+  <div id="content">
+    <a href="tiposenfer.html">
+      <img src="ennfermedades.jpg" alt="ojo">
+      <li>Afecciones en los ojos</li>
+    </a>
+
+    <a href="comic.html">
+      <img src="comic.jpg" alt="comic">
+      <li>Comic</li>
+    </a>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFmzxomGVjDxDNliNrVSrr0YYZIkQaBHX-On9HE3pSHxlpIQ/closedform">
+      <img src="imagen.png" alt="Lentes">
+      <li>Test</li>
+    </a>
+    <a href="indux.html">
+      <img src="regreso.jpg" alt="regreso">
+      <li>regreso</li>
+    </a>
+  </div>
+
+</body>
+
+</html>

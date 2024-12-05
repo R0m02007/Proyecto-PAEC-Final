@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rompecabezas de 12 Piezas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 2px;
+        }
+
+        .piece {
+            width: 100px;
+            height: 100px;
+            background-size: 400px 300px; /* Ajusta según el tamaño de la imagen */
+            background-image: url('paisaje.jpg'); /* Cambia esto por la URL de tu imagen */
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #piece-1 { background-position: 0 0; }
+        #piece-2 { background-position: -100px 0; }
+        #piece-3 { background-position: -200px 0; }
+        #piece-4 { background-position: -300px 0; }
+        #piece-5 { background-position: 0 -100px; }
+        #piece-6 { background-position: -100px -100px; }
+        #piece-7 { background-position: -200px -100px; }
+        #piece-8 { background-position: -300px -100px; }
+        #piece-9 { background-position: 0 -200px; }
+        #piece-10 { background-position: -100px -200px; }
+        #piece-11 { background-position: -200px -200px; }
+        #piece-12 { background-position: -300px -200px; }
+        .empty {
+            background-color: transparent; /* Espacio vacío */
+        }
+    </style>
+</head>
+<body>
+    <div class="puzzle-container">
+        <div class="piece" id="piece-1">1</div>
+        <div class="piece" id="piece-2">2</div>
+        <div class="piece" id="piece-3">3</div>
+        <div class="piece" id="piece-4">4</div>
+        <div class="piece" id="piece-5">5</div>
+        <div class="piece" id="piece-6">6</div>
+        <div class="piece" id="piece-7">7</div>
+        <div class="piece" id="piece-8">8</div>
+        <div class="piece" id="piece-9">9</div>
+        <div class="piece" id="piece-10">10</div>
+        <div class="piece" id="piece-11">11</div>
+        <div class="piece empty" id="piece-12"> </div> <!-- Pieza vacía -->
+    </div>
+
+    <script>
+        const pieces = document.querySelectorAll('.piece');
+        let emptyPiece = document.getElementById('piece-12');
+
+        pieces.forEach(piece => {
+            piece.addEventListener('click', () => {
+                const emptyIndex = Array.from(pieces).indexOf(emptyPiece);
+                const clickedIndex = Array.from(pieces).indexOf(piece);
+
+                // Comprobar si la pieza clicada es adyacente a la pieza vacía
+                if (isAdjacent(emptyIndex, clickedIndex)) {
+                    // Intercambiar las posiciones
+                    swapPieces(emptyPiece, piece);
+                }
+            });
+        });
+
+        function isAdjacent(emptyIndex, clickedIndex) {
+            const adjacentPositions = [
+                emptyIndex - 1, // izquierda
+                emptyIndex + 1, // derecha
+                emptyIndex - 4, // arriba
+                emptyIndex + 4  // abajo
+            ];
+            return adjacentPositions.includes(clickedIndex);
+        }
+
+        function swapPieces(empty, piece) {
+            const tempInnerHTML = piece.innerHTML;
+            piece.innerHTML = empty.innerHTML;
+            empty.innerHTML = tempInnerHTML;
+
+            // Actualizar la referencia a la pieza vacía
+            emptyPiece = piece;
+
+            // Verificar si el rompecabezas está completo
+            checkIfComplete();
+        }
+
+        function checkIfComplete() {
+            let isComplete = true;
+            pieces}

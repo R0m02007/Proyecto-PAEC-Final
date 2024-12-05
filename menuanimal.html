@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoológico Virtual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #94e1a7, #4c9c47);
+            animation: cambiarFondo 10s infinite alternate;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        @keyframes cambiarFondo {
+            background: linear-gradient(120deg, #94e1a7, #4c9c47);
+        }
+
+        header {
+            background-color: #459147;
+            color: rgb(170, 245, 164);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #124715;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #76a131;
+            color: black;
+        }
+
+        main {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .contenido {
+            flex: 3;
+            padding: 20px;
+        }
+
+        .informacion {
+            flex: 2;
+            padding: 20px;
+            border-left: 2px solid #4c9c47;
+            animation: cambiarFondo 10s infinite alternate;
+        }
+
+        .informacion p {
+            margin: 10px 0;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos al Zoológico Virtual</h1>
+        <p>Explora la increíble fauna del mundo</p>
+    </header>
+
+    <nav>
+        <a href="#leon" onclick="mostrarSeccion('leon')">León</a>
+        <a href="#elefante" onclick="mostrarSeccion('elefante')">Elefante</a>
+        <a href="#jirafa" onclick="mostrarSeccion('jirafa')">Jirafa</a>
+        <a href="#tigre" onclick="mostrarSeccion('tigre')">Tigre</a>
+        <a href="#panda" onclick="mostrarSeccion('panda')">Panda</a>
+    </nav>
+
+    <main>
+        <div class="contenido">
+            <section id="leon">
+                <h2>León</h2>
+                <p>El león es conocido como el "rey de la selva". Son animales sociales que viven en grupos llamados manadas.</p>
+                <img src="leon.jpg" alt="León">
+            </section>
+
+            <section id="elefante">
+                <h2>Elefante</h2>
+                <p>Los elefantes son los animales terrestres más grandes del mundo. Son famosos por su memoria y sus colmillos de marfil.</p>
+                <img src="elefante.jpg" alt="Elefante">
+            </section>
+
+            <section id="jirafa">
+                <h2>Jirafa</h2>
+                <p>La jirafa es el animal más alto del planeta. Su cuello largo les permite alcanzar las hojas más altas de los árboles.</p>
+                <img src="jirafa.jpg" alt="Jirafa">
+            </section>
+
+            <section id="tigre">
+                <h2>Tigre</h2>
+                <p>El tigre es el felino más grande del mundo. Son depredadores solitarios y excelentes nadadores.</p>
+                <img src="tigre.jpg" alt="Tigre">
+            </section>
+
+            <section id="panda">
+                <h2>Panda</h2>
+                <p>Los pandas son osos adorables que se alimentan principalmente de bambú. Son originarios de China.</p>
+                <img src="panda.jpg" alt="Panda">
+            </section>
+        </div>
+
+        <aside class="informacion">
+            <h3>Detalles del Animal</h3>
+            <div id="detalle"></div>
+        </aside>
+    </main>
+
+    <script>
+        const detalles = {
+            leon: "Medidas promedio: 1.2 m de altura, 2.5 m de largo. Peso: 190 kg (machos).",
+            elefante: "Medidas promedio: 3 m de altura, 6 m de largo. Peso: 5,500 kg.",
+            jirafa: "Medidas promedio: 5-6 m de altura. Peso: 1,200 kg.",
+            tigre: "Medidas promedio: 1 m de altura, 3 m de largo. Peso: 300 kg.",
+            panda: "Medidas promedio: 1.2-1.5 m de altura. Peso: 100 kg."
+        };
+
+        function mostrarSeccion(id) {
+            const secciones = document.querySelectorAll('section');
+            secciones.forEach(seccion => seccion.classList.remove('active'));
+
+            const seccionActiva = document.getElementById(id);
+            seccionActiva.classList.add('active');
+
+            const detalle = document.getElementById("detalle");
+            detalle.textContent = detalles[id];
+        }
+    </script>
+</body>
+</html>

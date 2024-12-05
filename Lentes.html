@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visión Para Todos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffffff, #7700ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(172, 158, 158, 0.363);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .content {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 0 15px 15px 0;
+        }
+
+        h1 {
+            color: #9af730;
+            font-size: 48px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-shadow: 2px 2px #333;
+        }
+
+        h2, h3 {
+            color: #333;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-shadow: 1px 1px #666;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #000000;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #555;
+        }
+
+        /* Posicionar el logo en la esquina superior izquierda */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            object-fit: cover; 
+        }
+
+        .logo:hover {
+            transform: translateX(10px);
+        }
+
+        /* Ocultamos el checkbox */
+        #toggle-menu {
+            display: none;
+        }
+
+        .menu-container {
+            position: absolute;
+            top: 120px; /* Justo debajo del logo */
+            left: 10px; /* Alineado a la izquierda */
+        }
+
+        /* Estilo del botón del menú */
+        .menu-button {
+            font-size: 24px;
+            background-color: #58c7c3;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        /* Estilos del menú */
+        .menu {
+            background-color: #69b9db;
+            color: rgb(0, 0, 0);
+            width: 200px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            display: none; /* Por defecto, el menú está oculto */
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            border-bottom: 1px solid #bca8a8;
+        }
+
+        .menu ul li a {
+            display: flex; /* Usamos flexbox para alinear el logo e ítem del menú */
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .menu ul li a img {
+            width: 20px; /* Ajusta el tamaño del logo */
+            height: 20px;
+            margin-right: 10px; /* Añade un espacio entre el logo y el texto */
+        }
+
+        .menu ul li a:hover {
+            background-color: #444;
+        }
+
+        /* Mostrar el menú cuando el checkbox está marcado */
+        #toggle-menu:checked + .menu-button + .menu {
+            display: block;
+        }
+
+        .ver-mas-btn {
+            display: inline-block;
+            background-color: #a200ff; 
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .ver-mas-btn:hover {
+            background-color: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="union.j.jpeg" alt="Logo" class="logo">
+    
+    <div class="menu-container">
+        <input type="checkbox" id="toggle-menu">
+        <label for="toggle-menu" class="menu-button">☰ Menú</label>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="tiposenfer.html"><img src="ennfermedades.jpg" alt="ennfer"> Afecciones en los ojos</a></li>
+                <li><a href="comic.html"><img src="comic.jpg" alt="comic"> Comic</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFmzxomGVjDxDNliNrVSrr0YYZIkQaBHX-On9HE3pSHxlpIQ/closedform"><img src="imagen.png" alt="test"> Test</a></li>
+                <li><a href=""><img src="regreso.jpg" alt="regreso"> Regresar</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h1>Visión Para Todos</h1>
+            <h2>¿En qué consiste?</h2>
+            <p>Tenemos planeado un programa de apoyo para aportar parte de la cantidad monetaria que se necesita en la adquisición de unos lentes para quienes lo necesitan.</p>
+            <h3>¿Cómo lo haremos?</h3>
+            <p>Lograremos esto mediante una encuesta que evalúe si cuentas con dificultades visuales. En caso de que detectemos que necesitas lentes, el programa te proporcionará una ayuda económica. Solo necesitas llevar tu INE, CURP, comprobante de domicilio y número telefónico.</p>
+        </div>
+        
+        <div class="sidebar">
+            <img src="lentes2.jpg" alt="Lentes">
+        </div>
+    </div>
+</body>
+</html>

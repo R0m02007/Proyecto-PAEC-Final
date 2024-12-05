@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" >
+    <link rel="stylesheet" href="estilos/formas.css">
+</head>
+<body>
+    <form id="contact-form">
+        <h2>FORMULARIO DE CONTACTO</h2>
+        <input type="text" class="entrada" id="direccion" name="direccion" placeholder="ingresa tu direccion" required>
+        <input type="email" class="entrada" id="correo" name="correo" placeholder="correo electronico" required>
+        <input type="text" class="entrada" id="domicilio" name="domicilio" placeholder="domicilio" required>
+        <input type="text" class="entrada" id="nombre" name="nombre" placeholder="nombre completo" required>
+        <input type="text" class="entrada" id="nt" name="nt" placeholder="numero de tarjeta de credito/debito" required>
+        <input type="text" class="entrada" id="telefono" name="telefono" placeholder="numero de telefono" required>
+        <input type="date" class="entrada" id="fecha" name="fecha" placeholder="fecha" required>
+        <label for="opciones"></label>
+        <select id="opciones" class="entrada" name="opciones" required>
+            <option value="aguascalientes">aguascalientes</option>
+            <option value="zacatecas">zacatecas</option>
+            <option value="guadalajara">guadalajara</option>
+            <option value="cdmx">cdmx</option>
+        </select>
+        <div class="botones">
+            <input type="submit" class="btn" id="enviar" value="Enviar">
+            <input type="reset" class="btn" id="borrar" value="Borrar">
+        </div>
+    </form>
+
+    <div id="mensaje-confirmacion" style="display:none; text-align:center; margin-top:20px;">
+        <h3>¡Formulario Enviado!</h3>
+        <p>Gracias por enviar tu información. Nos pondremos en contacto contigo pronto.</p>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            document.getElementById('mensaje-confirmacion').style.display = 'block';
+
+            document.getElementById('contact-form').style.display = 'none';
+
+        });
+    </script>
+</body>
+</html>

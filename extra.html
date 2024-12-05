@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEC - Proyectos</title>
+
+  <style>
+    body {
+      background-color: #F1F1E6;
+      color: #333333;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 42px;
+      color: #557A95;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      padding: 20px;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #FFFFFF;
+      background-color: #88B04B;
+      border-radius: 15px;
+      width: 220px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    a:hover {
+      background-color: #6A8E44;
+      box-shadow: 0 0 15px rgba(136, 176, 75, 0.6);
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    a:hover img {
+      transform: scale(1.1);
+    }
+
+    li {
+      list-style-type: none;
+      font-size: 22px;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .logo:hover {
+      transform: translateX(10px);
+    }
+
+    footer {
+      background-color: #557A95;
+      padding: 20px;
+      color: #FFFFFF;
+      text-align: center;
+      margin-top: 40px;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    footer h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    footer li {
+      color: #FFFFFF;
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+      a {
+        width: 160px;
+        padding: 15px;
+      }
+
+      img {
+        width: 80px;
+        height: 80px;
+      }
+
+      li {
+        font-size: 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <img src="union.j.jpeg" alt="Logo" class="logo">
+
+  <h1>Información Extra</h1>
+
+  <div id="content">
+    <a href="finalidad.html">
+      <img src="viejito.jpeg" alt="img">
+      <li>Finalidad/Beneficios</li>
+    </a>
+
+    <a href="experiencia.html">
+      <img src=".jpg" alt="experiencia">
+      <li>Nuestra Experiencia</li>
+    </a>
+    <a href="indux.html">
+      <img src="regreso.jpg" alt="experiencia">
+      <li>Regreso</li>
+    </a>
+  </div>
+
+  <footer>
+    <h1>Hecho por</h1>
+    <li>Darío Alejandro Romo Esquivel</li>
+    <li>Ángel Eduardo García García</li>
+    <li>Ángel Misael Macías Medrano</li>
+    <li>Aarón Alejandro Reyes Domínguez</li>
+    <h1>5B</h1>
+  </footer>
+</body>
+
+</html>
